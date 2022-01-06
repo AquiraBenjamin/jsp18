@@ -30,6 +30,7 @@ public class MyDispatcher extends HttpServlet {
 		Controller controller=null;
 		
 		//making the controller by the requested process
+		//controller
 		try {
 			 if(com.equals("/customer/notice.do")) {
 				controller=new NoticeController();
