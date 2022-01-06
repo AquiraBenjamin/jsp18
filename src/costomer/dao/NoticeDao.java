@@ -11,15 +11,15 @@ import costomer.vo.Notice;
 public class NoticeDao {
 	
 	//the notices have multiple rows of record so List is needed
-	public List<Notice> noticeSelAll(String field, String query) throws Exception {
+	public List<Notice> noticeSelAll() throws Exception {
 		//think elastically you can put variable in between String
-		//String sql="select * from notices order by to_number(seq) desc";
-		String sql="select * from notices where "+field+" like ? order by to_number(seq) desc";
+		String sql="select * from notices order by to_number(seq) desc";
+		//String sql="select * from notices where "+field+" like ? order by to_number(seq) desc";
 		//dbcon
 		Connection con=DBcon.getConnection();
 		//execute
 		PreparedStatement pstmt=con.prepareStatement(sql);
-		pstmt.setString(1, "%"+query+"%");
+		
 
 		//result
 		ResultSet rs=pstmt.executeQuery();
