@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import customer.controller.notice.NoticeController;
+
 public class MyDispatcher extends HttpServlet {
 	
 	@Override
@@ -25,17 +27,17 @@ public class MyDispatcher extends HttpServlet {
 		
 	
 		
-		
+		Controller controller=null;
 		
 		//making the controller by the requested process
-		/*try {
-			if(com.equals("/customer/noticeDetail.do")) {
-				
-			}
+		try {
+			 if(com.equals("/customer/notice.do")) {
+				controller=new NoticeController();
+				}
 			controller.execute(request,response);
 		}catch(Exception e) {
 			
-		}*/
+		}
 		
 	}
 
